@@ -1,0 +1,117 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+--
+-- Name: nested; Type: TYPE; Schema: public; Owner: ckan_default
+--
+
+CREATE TYPE public.nested AS (
+	json json,
+	extra text
+);
+
+
+ALTER TYPE public.nested OWNER TO ckan_default;
+
+--
+-- Name: populate_full_text_trigger(); Type: FUNCTION; Schema: public; Owner: ckan_default
+--
+
+CREATE FUNCTION public.populate_full_text_trigger() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+    BEGIN
+        IF NEW._full_text IS NOT NULL THEN
+            RETURN NEW;
+        END IF;
+        NEW._full_text := (
+            SELECT to_tsvector(string_agg(value, ' '))
+            FROM json_each_text(row_to_json(NEW.*))
+            WHERE key NOT LIKE '\_%');
+        RETURN NEW;
+    END;
+$$;
+
+
+ALTER FUNCTION public.populate_full_text_trigger() OWNER TO ckan_default;
+
+--
+-- Name: _table_metadata; Type: VIEW; Schema: public; Owner: ckan_default
+--
+
+CREATE VIEW public._table_metadata AS
+ SELECT DISTINCT substr(md5(((dependee.relname)::text || (COALESCE(dependent.relname, ''::name))::text)), 0, 17) AS _id,
+    dependee.relname AS name,
+    dependee.oid,
+    dependent.relname AS alias_of
+   FROM (((pg_class dependee
+     LEFT JOIN pg_rewrite r ON ((r.ev_class = dependee.oid)))
+     LEFT JOIN pg_depend d ON ((d.objid = r.oid)))
+     LEFT JOIN pg_class dependent ON ((d.refobjid = dependent.oid)))
+  WHERE ((((dependee.oid <> dependent.oid) OR (dependent.oid IS NULL)) AND ((dependee.relname IN ( SELECT pg_tables.tablename
+           FROM pg_tables)) OR (dependee.relname IN ( SELECT pg_views.viewname
+           FROM pg_views)))) AND (dependee.relnamespace = ( SELECT pg_namespace.oid
+           FROM pg_namespace
+          WHERE (pg_namespace.nspname = 'public'::name))))
+  ORDER BY dependee.oid DESC;
+
+
+ALTER TABLE public._table_metadata OWNER TO ckan_default;
+
+--
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO ckan_default;
+GRANT USAGE ON SCHEMA public TO datastore_default;
+
+
+--
+-- Name: TABLE _table_metadata; Type: ACL; Schema: public; Owner: ckan_default
+--
+
+REVOKE ALL ON TABLE public._table_metadata FROM PUBLIC;
+REVOKE ALL ON TABLE public._table_metadata FROM ckan_default;
+GRANT ALL ON TABLE public._table_metadata TO ckan_default;
+GRANT SELECT ON TABLE public._table_metadata TO datastore_default;
+
+
+--
+-- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: public; Owner: ckan_default
+--
+
+ALTER DEFAULT PRIVILEGES FOR ROLE ckan_default IN SCHEMA public REVOKE ALL ON TABLES  FROM PUBLIC;
+ALTER DEFAULT PRIVILEGES FOR ROLE ckan_default IN SCHEMA public REVOKE ALL ON TABLES  FROM ckan_default;
+ALTER DEFAULT PRIVILEGES FOR ROLE ckan_default IN SCHEMA public GRANT SELECT ON TABLES  TO datastore_default;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

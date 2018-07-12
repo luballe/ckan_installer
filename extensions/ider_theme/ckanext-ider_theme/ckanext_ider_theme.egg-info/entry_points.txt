@@ -1,0 +1,7 @@
+
+        [ckan.plugins]
+        ider_theme=ckanext.ider_theme.plugin:Ider_ThemePlugin
+
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
+    

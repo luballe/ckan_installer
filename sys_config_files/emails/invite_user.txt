@@ -1,0 +1,14 @@
+
+Ha sido invitado al sistema de catalogo de la {{ site_title }}.
+
+El usuario {{ user_name }} ha sido creado para aceder al sistema.
+
+Dicho usuario se adiciono la {{ group_type }} {{ group_title }} con el rol de {{ role_name }}.
+
+Para aceptar esta invtacion, por favor asigne una contrasena de acceso en el siguiente enlace:
+   {{ reset_link }}
+
+
+--
+Mensaje enviando por {{ site_title }} ({{ site_url }})
+

@@ -1,0 +1,5 @@
+
+        [ckan.plugins]
+        ags_fs_view=ckanext.agsview.plugin:AGSFSView
+        ags_ms_view=ckanext.agsview.plugin:AGSMSView
+    

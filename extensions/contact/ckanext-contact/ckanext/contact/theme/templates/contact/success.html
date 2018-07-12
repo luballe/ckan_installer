@@ -1,0 +1,26 @@
+{% extends "page.html" %}
+
+
+{% block primary_content %}
+  <article class="module">
+    <div class="module-content">
+      <h1 class="page-heading">Solicitud Enviada!</h1>
+      <p>Sus comentarios han sdo enviados al la mesa de servicio de la IDE Regional. Le responderemos tan pronto como sea posible.</p>
+
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary_content %}
+<div class="module module-narrow module-shallow">
+  <h2 class="module-heading">
+    <i class="icon-info-sign"></i>
+    {{ _('Mesa de Servicio') }}
+  </h2>
+  <div class="module-content">
+    <p>
+      Preguntas? Comentarios? En IDER estaremos gustosos de ayudarle!
+    </p>
+  </div>
+</div>
+{% endblock %}

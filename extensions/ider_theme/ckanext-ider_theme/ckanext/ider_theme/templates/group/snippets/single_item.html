@@ -1,0 +1,32 @@
+{#
+Example:
+#}
+{% set type = group.type or 'group' %}
+{% set url = h.url_for(type ~ '_read', action='read', id=group.name) %}
+{% block single_item %}
+
+<!--class="column"-->
+<!--div class="col-4"-->
+    <img src="{{ group.image_display_url or h.url_for_static('/base/images/placeholder-group.png') }}" alt="{{ group.name }}" class="single-media-image">
+
+{#
+    <!--h3 class="single-media-heading">{{ group.display_name }}</h3-->
+
+  <!--a href="{{ url }}" title="{{ _('View {name}').format(name=group.display_name) }}" class="media-view">
+    <span>{{ _('View {name}').format(name=group.display_name) }}</span>
+  </a-->#}
+
+{#
+  {% if group.user_member %}
+    <input name="group_remove.{{ group.id }}" value="{{ _('Remove') }}" type="submit" class="btn btn-danger btn-small media-edit" title="{{ _('Remove dataset from this group') }}"/>
+  {% endif %}#}
+
+<!--/li-->
+{% endblock %}
+
+{% if position is divisibleby 4 %}
+  <!--li class="clearfix js-hide"></li-->
+  <!--div class="w-100"></div-->
+
+{% endif %}
+<!--/div-->

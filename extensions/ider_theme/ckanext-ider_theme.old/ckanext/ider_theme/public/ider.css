@@ -1,0 +1,361 @@
+/*Bacgorun color of top menu for authenticadted users*/
+.account-masthead {
+    background-color: #003E65;
+}
+/*Color of the top banner*/
+.navbar-static-top{
+    background-color: rgb(0, 159, 227);
+}
+/*color of the selected menue*/
+.masthead .navigation .nav-pills li.active a {
+  background-color: #003E65;
+}
+/*color of the menu on hover*/
+.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li.active a .btn-primary:hover{
+    background-color: #003E65;
+}
+/*Color of buttons*/
+.btn-primary{
+    background-color: rgb(0, 62, 101);
+    background-image: linear-gradient(to bottom, #003E65, #003E65);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background: url("../../../base/images/Mapa_IDER3.png");
+    /*background: url("../../../../ckan/ckan/public/base/images/MapaIDER.png");*/
+  }
+}
+body{
+  background-color: #003E65;
+}
+element.style{
+   background-color: rgb(135, 135, 135);
+}
+#element.style{
+   background-color: rgb(135, 135, 135);
+}
+/*Fix the button to upload a file*/
+a.btn{
+  /* width : 140px;*/
+}
+
+.js .image-upload .btn {
+  width : 40px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: #ffffff;
+  background-color: #333;
+  background-color: #333;
+}
+
+ /*background: #7a003e url(../../../base/images/bg.png);*/
+.site-footer {
+    min-height: 55px;
+    color:  rgb(0, 38, 76);
+    background-color:  rgb(0, 159, 227);
+/*    padding: 20px 0;*/
+    padding: 0px 0;
+}
+
+.homepage .module-search .module-content {
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    background-color:  rgb(0, 38, 76);
+    border-bottom: none;
+}
+.homepage .module-search .tags {
+    padding: 5px 10px 10px 10px;
+    background-color:  rgb(40, 40, 40);
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+
+.main-container {
+  padding: 10px 15px;
+  background-color:  rgb(135, 135, 135);
+}
+        
+.skyblue {
+	background-color: #22c8ff;
+}
+.deepskyblue {
+	background-color: #00bfff;
+}
+.darkerskyblue {
+	background-color: #00a6dd;
+}
+.carousel-indicators {
+	bottom: 0;
+}
+.carousel-control.right,
+.carousel-control.left {
+	background-image: none;
+}
+.carousel .item {
+	min-height: 420px; 
+	height: 100%;
+	width:100%; 
+        background-color:  rgb(135, 135, 135);
+}
+.carousel-caption h3,
+.carousel .icon-container,
+.carousel-caption button {
+        background-color:  rgb(135, 135, 135);
+}
+.carousel-caption h3 {
+	padding: .5em;
+}
+.carousel .icon-container {
+	display: inline-block;
+	font-size: 25px;
+	line-height: 25px;
+	padding: 1em;
+	text-align: center;
+	border-radius: 50%;
+        background-color:  rgb(135, 135, 135);
+}
+.carousel-caption button {
+	border-color: #00bfff;
+	margin-top: 1em; 
+}
+
+/* Animation delays */
+.carousel-caption h3:first-child {
+	animation-delay: 1s;
+}
+.carousel-caption h3:nth-child(2) {
+	animation-delay: 2s;
+}
+.carousel-caption button {
+	animation-delay: 3s;
+}
+
+.h2-ider{
+    background-color:  rgb(135, 135, 135);
+    color: #ffffff;
+}
+
+h1 {
+  text-align: center;  
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.p {
+  padding-top: 125px;
+  text-align: center;
+}
+
+.p a {
+  text-decoration: underline;
+}
+
+.single-media-heading {
+ text-align: center;
+}
+
+.single-media-image {
+ text-align: center;
+ width: 100px;
+ height:100px;
+}
+
+ol.carousel-indicators {
+  position: relative;
+  top: initial;
+  margin: 0;
+  left: 50%;
+  right: 0;
+  width: auto;
+text-align: center;
+}
+
+.ulstats {
+    float: none;
+    position: relative;
+    /*display: inline-grid;*/
+    left: 14%;
+    color: #ffffff;
+}
+
+.ulstats a{
+    color: #ffffff;
+}
+
+.ulstats a:hover{
+    color: #003e65;
+}
+
+.news{
+    display: flex;
+}
+
+.newstitle{
+    margin: 10px 100px 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.newstext{
+    margin: 10px 100px 10px;
+    padding-left: 10px;
+    text-align: justify;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.newscontainer {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.newscentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ider-footer {
+    clear: both;
+    display: block;
+    background-color: #003F65;
+    color: white;
+    padding-top: 25px;
+    padding-bottom: 20px;
+/*    font-family: "Josefin sans";*/
+    overflow: hidden;
+    font-weight: bold;
+    height: 14444;
+
+}
+
+.ider-footer-bg {
+    clear: both;
+    display: block;
+    background-color: #003F65;
+    overflow: hidden;
+    height: 145px;
+    width:100%;
+    padding-bottom: 0px;
+}
+
+.cont_3 {
+    float: left;
+    display: block;
+    padding: 0px;
+    width: 31%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.cont_3 a h3 {
+    margin: -6px;
+    padding: 0px;
+    line-height: 12px;
+    font-size: 13px !important;
+    margin-bottom: 0px;
+    color: white;
+    height: auto;
+}
+
+.accordion-toggle {
+    color: white;
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+    padding: 5px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    position: static;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.panel-abajo .accordion-toggle::after {
+    font-family: FontAwesome;
+    content: '\f054';
+    color: #FFFFFF;
+    position: relative;
+    right: 660px;
+    top: 1px;
+    transform: rotate(0deg);
+    float: right;
+}
+
+
+.panel-abajo .accordion-toggle.collapsed:after {
+    transform: rotate(90deg);
+}
+
+.collapse{
+  padding-top: 0px;
+}
+
+
+
+.cont_2_ider a h3 {
+    margin: -6px;
+    padding: 0px;
+    line-height: 12px;
+    font-size: 13px !important;
+    margin-bottom: 0px;
+    color: white;
+    height: auto;
+    padding-left: 10px;
+}
+
+.cont_2_ider {
+    float: left;
+    display: block;
+    padding: 0px;
+    width: 50%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.accordion-toggle-ider {
+    color: white;
+    cursor: pointer;
+    width: 29px;
+    height: 29px;
+    padding: 5px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    position: static;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.panel-abajo .accordion-toggle-ider::after {
+    font-family: FontAwesome;
+    content: '\f054';
+    color: #FFFFFF;
+    position: relative;
+    right: 535px;
+    top: 1px;
+    transform: rotate(0deg);
+    float: right;
+}
+
+.panel-abajo .accordion-toggle-ider.collapsed:after {
+    transform: rotate(90deg);
+}

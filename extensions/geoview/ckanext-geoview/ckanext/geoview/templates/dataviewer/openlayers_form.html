@@ -1,0 +1,9 @@
+{% import 'macros/form.html' as form %}
+
+{{ form.checkbox('feature_hoveron', label=_('Display Feature Info on Hover for IDER'), value=True, checked=data.feature_hoveron, error=errors.feature_hoveron) }}
+
+{{ form.textarea('feature_style', label=_('Feature style descriptor'), value=data.feature_style, error=errors.feature_style) }}
+
+{{ form.checkbox('load_layername', label=_('Load layer from Resource Name'), value=True, checked=data.load_layername, error=errors.load_layername) }}
+
+{# { form.input('layername', label=_('Layer Name'), value=data.layername, error=errors.layername) } #}

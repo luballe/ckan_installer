@@ -1,0 +1,17 @@
+{% set groups = h.all_groups() %}
+
+<!--ul sytle="width: 940px"-->
+
+<!--div class="row"-->
+    {% for group in groups %}
+    {% set type = group.type or 'group' %}
+    {% set url = h.url_for( controller='package', action='search',
+    groups=group.name ) %}
+ 
+    {% snippet "group/snippets/single_item.html", group=group, position=loop.index %}
+
+    {% endfor %}
+<!--/divi-->
+
+<!--/ul-->
+
